@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use std::io::{Read, Write};
+use std::io::{Result, Write};
 
 #[derive(Debug, PartialEq, Clone)]
 pub struct HttpResponse<'a> {
@@ -158,7 +158,7 @@ mod tests {
       body: Some("Item was shipped on 21st Dec 2020".into()),
     };
     let http_string: String = response_expected.into();
-    let response_actual = "HTTP/1.1 404 NotFound\r\nContent-Type:text/html\r\nContent-Length: 33\r\n\r\nItem was shipped on 21st Dec 2020";
-    assert_eq!(response_actual, response_expected);
+    let response_actual = "HTTP/1.1 404 Not Found\r\nContent-Type:text/html\r\nContent-Length: 33\r\n\r\nItem was shipped on 21st Dec 2020";
+    assert_eq!(http_string, response_actual);
   }
 }
