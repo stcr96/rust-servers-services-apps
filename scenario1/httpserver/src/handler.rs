@@ -16,6 +16,7 @@ pub trait Handler {
   }
 }
 
+#[derive(Serialize, Deserialize)]
 pub struct OrderStatus {
   order_id: i32,
   order_date: String,
