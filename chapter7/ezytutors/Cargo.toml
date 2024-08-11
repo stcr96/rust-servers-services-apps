@@ -1,9 +1,9 @@
-[workspace]
-members = ["tutor-web-service", "tutor-web-app-ssr"]
-
 [package]
 name = "ezytutors"
 version = "0.1.0"
 edition = "2021"
+
+[workspace]
+members = ["tutor-db"]
 
 [dependencies]
